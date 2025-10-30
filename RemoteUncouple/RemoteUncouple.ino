@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-10-30 09:53:49
-//  Last Modified : <251030.1112>
+//  Last Modified : <251030.1415>
 //
 //  Description	
 //
@@ -55,9 +55,43 @@ const int SLEEP  = 11;
 Uncoupler front(DIR,STEP,FRONTEN,SLEEP);
 Uncoupler rear(DIR,STEP,REAREN,SLEEP);
 
+#include <WiFi.h>
+
+const char* ssid     = "yourssid";
+const char* password = "yourpasswd";
+
+//WiFiServer server(80);
+
+
+
 void setup() {
     front.Begin();
     rear.Begin();
+    
+    Serial.begin(115200);
+    pinMode(5, OUTPUT);      // set the LED pin mode
+    
+    delay(10);
+    
+    // We start by connecting to a WiFi network
+    
+    Serial.println();
+    Serial.println();
+    Serial.print("Connecting to ");
+    Serial.println(ssid);
+    
+    WiFi.begin(ssid, password);
+    
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    
+    Serial.println("");
+    Serial.println("WiFi connected.");
+    Serial.println("IP address: ");
+    Serial.println(WiFi.localIP());
+    
 }
                 
 void loop() {
