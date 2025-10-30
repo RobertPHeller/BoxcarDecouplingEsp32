@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name "Feather Wing")(type "Legacy")(uri "${KIPRJMOD}/FeatherWing.lib")(options "")(descr ""))
+  (lib (name "Adafruit")(type "KiCad")(uri "${KIPRJMOD}/Adafruit.kicad_sym")(options "")(descr ""))
+  (lib (name "PowerSypply")(type "KiCad")(uri "${KIPRJMOD}/PowerSupply.kicad_sym")(options "")(descr ""))
+)
