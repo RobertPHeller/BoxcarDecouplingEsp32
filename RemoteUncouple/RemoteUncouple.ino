@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-10-30 09:53:49
-//  Last Modified : <251030.1008>
+//  Last Modified : <251030.1112>
 //
 //  Description	
 //
@@ -48,10 +48,16 @@ const int microMode = 16; // microstep mode, default is 1/16 so 16; ex: 1/4 woul
 // full rotation * microstep divider
 const int FRONTEN = 9;
 const int REAREN = 10;
+const int SLEEP  = 11;
 
+#include "Uncoupler.h"
+
+Uncoupler front(DIR,STEP,FRONTEN,SLEEP);
+Uncoupler rear(DIR,STEP,REAREN,SLEEP);
 
 void setup() {
-    // put your setup code here, to run once:
+    front.Begin();
+    rear.Begin();
 }
                 
 void loop() {
