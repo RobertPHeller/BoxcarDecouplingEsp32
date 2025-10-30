@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-10-30 09:53:49
-//  Last Modified : <251030.0953>
+//  Last Modified : <251030.1008>
 //
 //  Description	
 //
@@ -41,6 +41,14 @@
 //////////////////////////////////////////////////////////////////////////////
 
 static const char rcsid[] = "@(#) : $Id$";
+
+const int DIR = 5;
+const int STEP = 6;
+const int microMode = 16; // microstep mode, default is 1/16 so 16; ex: 1/4 would be 4
+// full rotation * microstep divider
+const int FRONTEN = 9;
+const int REAREN = 10;
+
 
 void setup() {
     // put your setup code here, to run once:
