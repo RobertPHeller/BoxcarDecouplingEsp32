@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-10-30 09:53:49
-//  Last Modified : <251030.1415>
+//  Last Modified : <251031.1531>
 //
 //  Description	
 //
@@ -56,13 +56,14 @@ Uncoupler front(DIR,STEP,FRONTEN,SLEEP);
 Uncoupler rear(DIR,STEP,REAREN,SLEEP);
 
 #include <WiFi.h>
+#include <WiFiUdp.h>
 
 const char* ssid     = "yourssid";
 const char* password = "yourpasswd";
 
 //WiFiServer server(80);
 
-
+WiFiUDP udp;
 
 void setup() {
     front.Begin();
@@ -91,7 +92,7 @@ void setup() {
     Serial.println("WiFi connected.");
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
-    
+    //udp.begin(LOCOFIPORT);
 }
                 
 void loop() {

@@ -165,6 +165,16 @@
       (net 5 "/CommonSLP") (pinfunction "SLP") (pintype "input") (tstamp 7acbc9e4-d27d-4771-a008-25394c0366a6))
     (pad "10" thru_hole circle (at 11.43 9.525 270) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
       (net 37 "/FrontEN") (pinfunction "EN") (pintype "input") (tstamp 3f63b5a2-cfc5-4dd6-bd7b-339fba264f7b))
+    (model "${KIPRJMOD}/Adafruit.pretty/6109 A4988 Driver.step"
+      (offset (xyz -13.5 -12 2.5))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x10_P2.54mm_Vertical.wrl"
+      (offset (xyz 11.5 -9.5 2.5))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 180 90))
+    )
   )
 
   (footprint "Adafruit:Adafruit A4988" (layer "F.Cu")
@@ -203,6 +213,16 @@
       (net 5 "/CommonSLP") (pinfunction "SLP") (pintype "input") (tstamp 172901a6-545b-4c04-bf89-833f34a17e24))
     (pad "10" thru_hole circle (at 11.43 9.525 90) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask)
       (net 39 "/RearEN") (pinfunction "EN") (pintype "input") (tstamp 13b96d63-2f7c-4867-9845-ff50e83048a2))
+    (model "${KIPRJMOD}/Adafruit.pretty/6109 A4988 Driver.step"
+      (offset (xyz -13.5 -12 2.5))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x10_P2.54mm_Vertical.wrl"
+      (offset (xyz -11.5 -9.5 2.5))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 180 0 90))
+    )
   )
 
   (footprint "RDXK210:DXK310_T0_00001" (layer "F.Cu")
@@ -466,6 +486,31 @@
       (net 40 "/MPower") (pinfunction "VBAT") (pintype "power_out") (tstamp cb1e2304-9680-41db-85c9-688550e01124))
     (pad "P$1" thru_hole circle (at 2.54 -20.32) (size 3.81 3.81) (drill 2.49936) (layers *.Cu *.Paste *.Mask) (tstamp ee562f44-fadc-412d-94ef-5eea8984b43e))
     (pad "P$2" thru_hole circle (at 2.54 -2.54) (size 3.81 3.81) (drill 2.49936) (layers *.Cu *.Paste *.Mask) (tstamp 304d0947-0324-44b6-9ffa-234fb4350deb))
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x12_P2.54mm_Vertical.wrl"
+      (offset (xyz 16.5 21.5 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 -90))
+    )
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x16_P2.54mm_Vertical.wrl"
+      (offset (xyz 6.5 1.5 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 -90))
+    )
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x12_P2.54mm_Vertical.step"
+      (offset (xyz 16.5 21.5 9.5))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 180 -90))
+    )
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x16_P2.54mm_Vertical.wrl"
+      (offset (xyz 44.5 1.5 9.5))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 180 90))
+    )
+    (model "${KIPRJMOD}/Adafruit.pretty/5323 Feather ESP32-S3.step"
+      (offset (xyz 0 0 9.5))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
   )
 
   (footprint "TestPoint:TestPoint_Pad_4.0x4.0mm" (layer "F.Cu")
@@ -568,6 +613,24 @@
   )
 
   (gr_rect (start 58.42 66.04) (end 185.42 93.98) (layer "Edge.Cuts") (width 0.1) (fill none) (tstamp 4d6eec7e-c365-457a-b00b-4d973aa71f27))
+  (dimension (type aligned) (layer "Dwgs.User") (tstamp 631de957-f242-4535-b40e-11943c533963)
+    (pts (xy 58.42 93.98) (xy 58.42 66.04))
+    (height -2.54)
+    (gr_text "27.9400 mm" (at 54.73 80.01 90) (layer "Dwgs.User") (tstamp 631de957-f242-4535-b40e-11943c533963)
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (format (units 3) (units_format 1) (precision 4))
+    (style (thickness 0.15) (arrow_length 1.27) (text_position_mode 0) (extension_height 0.58642) (extension_offset 0.5) keep_text_aligned)
+  )
+  (dimension (type aligned) (layer "Dwgs.User") (tstamp 6ddfaa3a-8acb-4609-b658-85e1c585c8df)
+    (pts (xy 58.42 66.04) (xy 185.42 66.04))
+    (height -12.065)
+    (gr_text "127.0000 mm" (at 121.92 52.825) (layer "Dwgs.User") (tstamp 6ddfaa3a-8acb-4609-b658-85e1c585c8df)
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (format (units 3) (units_format 1) (precision 4))
+    (style (thickness 0.15) (arrow_length 1.27) (text_position_mode 0) (extension_height 0.58642) (extension_offset 0.5) keep_text_aligned)
+  )
 
   (segment (start 132.08 80.645) (end 132.08 69.725) (width 0.25) (layer "F.Cu") (net 5) (tstamp b4a38d28-2662-4c71-9792-e885efb72a35))
   (via (at 132.08 80.645) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 5) (tstamp 0e048719-3e17-4820-979f-9d0a4f00b4c8))
