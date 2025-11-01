@@ -2,7 +2,14 @@
 
   (uuid aa9edc2a-8f86-40b7-88a7-0113686fc633)
 
-  (paper "A4")
+  (paper "USLetter")
+
+  (title_block
+    (title "Boxcar WiFi Coupler Control")
+    (date "2025-10-31")
+    (rev "A")
+    (company "Deepwoods Software")
+  )
 
   (lib_symbols
     (symbol "Adafruit:Adafruit_A4988" (in_bom yes) (on_board yes)
