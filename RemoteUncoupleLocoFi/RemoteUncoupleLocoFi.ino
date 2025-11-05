@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-10-30 09:53:49
-//  Last Modified : <251031.1531>
+//  Last Modified : <251105.0646>
 //
 //  Description	
 //
@@ -56,14 +56,19 @@ Uncoupler front(DIR,STEP,FRONTEN,SLEEP);
 Uncoupler rear(DIR,STEP,REAREN,SLEEP);
 
 #include <WiFi.h>
-#include <WiFiUdp.h>
+#include <NetworkUdp.h>
+#include <ESPmDNS.h>
+#include <esp_sleep.h>
 
-const char* ssid     = "yourssid";
-const char* password = "yourpasswd";
+#include "WiFiConfiguration.h"  
+const char* ssid     = WIFI_SSID;
+const char* password = WIFI_PASS;
+#include "LocoFi.h"
 
 //WiFiServer server(80);
 
-WiFiUDP udp;
+NetworkUDP  udp;
+MDNSResponder mDNS;
 
 void setup() {
     front.Begin();
@@ -92,9 +97,49 @@ void setup() {
     Serial.println("WiFi connected.");
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
-    //udp.begin(LOCOFIPORT);
+    mDNS.begin("loco");
+    udp.begin(LOCOFIPORT);
 }
                 
 void loop() {
-    // put your main code here, to run repeatedly:
+    int plen = udp.parsePacket();
+    if (plen > 0)
+    {
+        unsigned char cmd = udp.read();
+        unsigned char flags = udp.read();
+        while (udp.available() > 0)
+        {
+            unsigned char t = udp.read();
+        }
+        switch (cmd) {
+            case LocoFi::FWD_LIGHT: 
+                if (flags == 0x00) 
+                {
+                    front.Close();
+                } else if (flags == 0x01)
+                {
+                    front.Open();
+                } else
+                {
+                }
+                break;
+            case LocoFi::REV_LIGHT:
+                if (flags == 0x00)
+                {
+                    rear.Close();
+                } else if (flags == 0x01)
+                {
+                    rear.Open();
+                } else
+                {
+                }
+                break;
+            default:
+                break;
+        }
+    } else {
+        // Sleep()
+        esp_sleep_enable_wifi_wakeup();
+        esp_light_sleep_start();
+    }
 }    

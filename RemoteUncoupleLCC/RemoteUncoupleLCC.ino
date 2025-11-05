@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-10-30 09:53:49
-//  Last Modified : <251101.1458>
+//  Last Modified : <251104.1127>
 //
 //  Description	
 //
@@ -108,7 +108,8 @@ static const char rcsid[] = "@(#) : $Id$";
 
 /// This is the node id to assign to this device, this must be unique
 /// on the CAN bus.
-static constexpr uint64_t NODE_ID = UINT64_C(0x050101012289);
+#include "NODEID.h"
+//static constexpr uint64_t NODE_ID = UINT64_C(0x050101012289);
 
 #if defined(USE_WIFI)
 // Configuring WiFi accesspoint name and password
@@ -129,6 +130,7 @@ const char *ssid = WIFI_SSID;
 
 /// Password of the wifi network.
 const char *password = WIFI_PASS;
+
 
 /// This is the hostname which the ESP32 will advertise via mDNS, it should be
 /// unique.
