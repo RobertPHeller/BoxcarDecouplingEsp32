@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-11-04 15:18:30
-//  Last Modified : <251104.1545>
+//  Last Modified : <251109.0849>
 //
 //  Description	
 //
@@ -44,8 +44,6 @@
 
 #ifndef __WIFICONFIGURATION_H
 #define __WIFICONFIGURATION_H
-
-#define LOCOFIPORT 8266
 
 extern char WIFI_SSID[];
 extern char WIFI_PASS[];

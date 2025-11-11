@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-10-30 09:53:49
-//  Last Modified : <251104.1127>
+//  Last Modified : <251110.1113>
 //
 //  Description	
 //
@@ -67,7 +67,7 @@ static const char rcsid[] = "@(#) : $Id$";
 
 // Uncomment the line below to have all packets printed to the Serial
 // output. This is not recommended for production deployment.
-//#define PRINT_PACKETS
+#define PRINT_PACKETS
 
 // uncomment the line below to specify a GPIO pin that should be used to force
 // a factory reset when the node starts and the GPIO pin reads LOW.
@@ -134,7 +134,7 @@ const char *password = WIFI_PASS;
 
 /// This is the hostname which the ESP32 will advertise via mDNS, it should be
 /// unique.
-const char *hostname = "esp32mrn";
+const char *hostname = "boxcar1234mrn";
 
 OVERRIDE_CONST(gridconnect_buffer_size, 3512);
 //OVERRIDE_CONST(gridconnect_buffer_delay_usec, 200000);

@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-11-04 19:16:46
-//  Last Modified : <251104.1941>
+//  Last Modified : <251109.0900>
 //
 //  Description	
 //
@@ -46,6 +46,9 @@
 #define __LOCOFI_H
 
 namespace LocoFi {
+
+const int LOCOFIPORT = 8266;
+
 
 enum LocoFiByte1 {
     ENGINE = 0x00,
