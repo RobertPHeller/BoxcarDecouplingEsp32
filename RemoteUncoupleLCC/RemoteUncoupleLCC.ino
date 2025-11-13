@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-10-30 09:53:49
-//  Last Modified : <251110.1113>
+//  Last Modified : <251112.1642>
 //
 //  Description	
 //
@@ -262,6 +262,15 @@ void log_output(char* buf, int size)
 }
 #endif // USE_USB_CDC_OUTPUT
 
+#if !defined(USE_USB_CDC_OUTPUT)
+void log_output(char* buf, int size)
+{
+    if (size <= 0) return;
+    buf[size] = '\0';
+    Serial.println(buf);
+}
+#endif
+
 void check_for_factory_reset()
 {
 #if defined(FACTORY_RESET_GPIO_PIN)
@@ -297,6 +306,8 @@ void check_for_factory_reset()
 void setup() {
 #if !defined(USE_USB_CDC_OUTPUT)
     Serial.begin(115200L);
+    delay(2000);   // delay for Serial monitor
+    Serial.println("*** setup() entered");
 #else
     USB.productName(openlcb::SNIP_STATIC_DATA.model_name);
     USB.manufacturerName(openlcb::SNIP_STATIC_DATA.manufacturer_name);

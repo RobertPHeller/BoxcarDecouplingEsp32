@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-11-01 15:20:57
-//  Last Modified : <251101.1604>
+//  Last Modified : <251112.2033>
 //
 //  Description	
 //
@@ -117,9 +117,11 @@ void UncouplerConsumer::handle_event_report(const openlcb::EventRegistryEntry &e
     {
         CloseRear();
     }
+    done->notify();
 }
 void UncouplerConsumer::OpenFront()
 {
+    LOG(INFO,"UncouplerConsumer::OpenFront()");
     sleep_->clr();
     frontEn_->clr();
     dir_->write(OPENDIR);
@@ -135,6 +137,7 @@ void UncouplerConsumer::OpenFront()
 }
 void UncouplerConsumer::CloseFront()
 {
+    LOG(INFO,"UncouplerConsumer::CloseFront()");
     sleep_->clr();
     frontEn_->clr();
     dir_->write(CLOSEDIR);
@@ -150,6 +153,7 @@ void UncouplerConsumer::CloseFront()
 }
 void UncouplerConsumer::OpenRear()
 {
+    LOG(INFO,"UncouplerConsumer::OpenRear()");
     sleep_->clr();
     rearEn_->clr();
     dir_->write(OPENDIR);
@@ -165,6 +169,7 @@ void UncouplerConsumer::OpenRear()
 }
 void UncouplerConsumer::CloseRear()
 {
+    LOG(INFO,"UncouplerConsumer::CloseRear()");
     sleep_->clr();
     rearEn_->clr();
     dir_->write(CLOSEDIR);

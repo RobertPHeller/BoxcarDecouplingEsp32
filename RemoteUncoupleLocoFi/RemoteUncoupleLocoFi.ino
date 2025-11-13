@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : 2025-10-30 09:53:49
-//  Last Modified : <251110.1531>
+//  Last Modified : <251112.0828>
 //
 //  Description	
 //
@@ -165,11 +165,13 @@ void loop() {
             }
             break;
         case LocoFi::QUERY_LOCO_STATE:
-            Serial.println("*** QUERY_LOCO_STATE");
+            Serial.print("*** QUERY_LOCO_STATE: ");
             while (udp.available() > 0) {
                 uint8_t m = udp.read();
-                Serial.println(m,16);
+                Serial.print(m,16);
+                Serial.print(" ");
             }
+            Serial.println("");
             {
                 //udp.beginPacket();
                 //uint8_t version[] = {LocoFi::QUERY_LOCO_STATE,1};
@@ -178,11 +180,13 @@ void loop() {
             }
             break;
         case LocoFi::GET_CONSIST:
-            Serial.println("*** GET_CONSIST");
+            Serial.print("*** GET_CONSIST: ");
             while (udp.available() > 0) {
                 uint8_t m = udp.read();
-                Serial.println(m,16);
+                Serial.print(m,16);
+                Serial.print(" ");
             }
+            Serial.println("");
             {
                 //udp.beginPacket();
                 //uint8_t version[] = {LocoFi::GET_CONSIST,0};
@@ -191,16 +195,18 @@ void loop() {
             }
             break;
         case LocoFi::VERSION: 
-            Serial.println("*** VERSION");
+            Serial.print("*** VERSION: ");
             while (udp.available() > 0) {
                 uint8_t m = udp.read();
-                Serial.println(m,16);
+                Serial.print(m,16);
+                Serial.print(" ");
             }
+            Serial.println("");
             {
-                //udp.beginPacket();
-                //uint8_t version[] = {LocoFi::VERSION,0};
-                //udp.write(version,sizeof(version));
-                //udp.endPacket();
+                udp.beginPacket();
+                uint8_t version[] = {2};
+                udp.write(version,sizeof(version));
+                udp.endPacket();
             }
             break;
         case LocoFi::HEARTBEAT:
